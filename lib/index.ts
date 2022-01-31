@@ -127,13 +127,17 @@ export interface BindingPortInterface {
   drain(): Promise<void>
 }
 
-export interface BindingInterface<Port extends BindingPortInterface = BindingPortInterface, Open extends OpenOptions = OpenOptions> {
+export interface BindingInterface<T extends BindingPortInterface = BindingPortInterface, R extends OpenOptions = OpenOptions, P extends PortInfo = PortInfo> {
   /**
     Retrieves a list of available serial ports with metadata. The `path` must be guaranteed, and all other fields should be undefined if unavailable. The `path` is either the path or an identifier (eg `COM1`) used to open the serialport.
    */
-  list(): Promise<PortInfo[]>
+  list(): Promise<P[]>
   /**
    * Opens a connection to the serial port referenced by the path.
    */
-  open(options: Open): Promise<Port>
+  open(options: R): Promise<T>
 }
+
+export type PortInterfaceFromBinding<Binding> = Binding extends BindingInterface<infer T> ? T : never
+export type OpenOptionsFromBinding<Binding> = Binding extends BindingInterface<any, infer T> ? T : never
+export type PortInfoFromBinding<Binding> = Binding extends BindingInterface<any, any, infer T> ? T : never
