@@ -76,9 +76,10 @@ export interface BindingPortInterface {
 
     The in progress reads must error when the port is closed with an error object that has the property `canceled` equal to `true`. Any other error will cause a disconnection.
 
-   * @param offset The offset in the buffer to start writing at.
-   * @param length Specifies the maximum number of bytes to read.
-   * @returns {Promise} Resolves with the number of bytes read after a read operation.
+   * @param buffer - The Buffer to read data into.
+   * @param offset - The offset in the buffer to start writing at.
+   * @param length - Specifies the maximum number of bytes to read.
+   * @returns Promise - Resolves with the number of bytes read after a read operation.
    */
   read(buffer: Buffer, offset: number, length: number): Promise<{ buffer: Buffer; bytesRead: number }>
 
