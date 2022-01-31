@@ -1,7 +1,7 @@
 {
-  "name": "@reconbot/typescript-library-template",
+  "name": "@serialport/bindings-interface",
   "version": "0.0.0-development",
-  "description": "Rollup your code and types for publishing",
+  "description": "SerialPort Bindings Typescript Types",
   "types": "dist/index.d.ts",
   "main": "./dist/index.js",
   "exports": {
@@ -11,8 +11,8 @@
   "engines": {
     "node": "^12.22 || ^14.13 || >=16"
   },
-  "repository": "git@github.com:reconbot/typescript-library-template.git",
-  "homepage": "https://github.com/reconbot/typescript-library-template",
+  "repository": "git@github.com:serialport/bindings-interface.git",
+  "homepage": "https://github.com/serialport/bindings-interface",
   "scripts": {
     "test": "mocha",
     "lint": "tsc && eslint lib/**/*.ts",
