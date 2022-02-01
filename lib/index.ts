@@ -14,15 +14,17 @@ export interface PortInfo {
 }
 
 export interface OpenOptions {
-  /** The path of the port */
+  /** The system path of the serial port you want to open. For example, `/dev/tty.XXX` on Mac/Linux, or `COM1` on Windows */
   path: string
-  /** The baud rate of the port to be opened. This should match one of the commonly available baud rates, such as 110, 300, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, or 115200. Custom rates are supported best effort per platform. The device connected to the serial port is not guaranteed to support the requested baud rate, even if the port itself supports that baud rate. */
+  /**
+   * The baud rate of the port to be opened. This should match one of the commonly available baud rates, such as 110, 300, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, or 115200. Custom rates are supported best effort per platform. The device connected to the serial port is not guaranteed to support the requested baud rate, even if the port itself supports that baud rate.
+   */
   baudRate: number
-  /** Must be one of these: 8, 7, 6, or 5 defaults to 8 */
-  dataBits?: 8 | 7 | 6 | 5
+  /** Must be one of these: 5, 6, 7, or 8 defaults to 8 */
+  dataBits?: 5 | 6 | 7 | 8
   /** Prevent other processes from opening the port. Windows does not currently support `false`. Defaults to true */
   lock?: boolean
-  /** defaults to 1 - TODO should be a string */
+  /** defaults to 1 - TODO should be a string because the numbers are misleading and "fixing" them would break code */
   stopBits?: 1 | 2 | 3
   parity?: string
   /** Flow control Setting. Defaults to false */
@@ -141,3 +143,7 @@ export interface BindingInterface<T extends BindingPortInterface = BindingPortIn
 export type PortInterfaceFromBinding<Binding> = Binding extends BindingInterface<infer T> ? T : never
 export type OpenOptionsFromBinding<Binding> = Binding extends BindingInterface<any, infer T> ? T : never
 export type PortInfoFromBinding<Binding> = Binding extends BindingInterface<any, any, infer T> ? T : never
+
+export interface BindingsErrorInterface extends Error {
+  canceled?: boolean
+}
