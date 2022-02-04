@@ -24,8 +24,8 @@ export interface OpenOptions {
   dataBits?: 5 | 6 | 7 | 8
   /** Prevent other processes from opening the port. Windows does not currently support `false`. Defaults to true */
   lock?: boolean
-  /** defaults to 1 - TODO should be a string because the numbers are misleading and "fixing" them would break code */
-  stopBits?: 1 | 2 | 3
+  /** Must be 1, 1.5 or 2 defaults to 1 */
+  stopBits?: 1 | 1.5 | 2
   parity?: string
   /** Flow control Setting. Defaults to false */
   rtscts?: boolean
