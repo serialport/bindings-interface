@@ -59,17 +59,17 @@ export interface PortStatus {
 }
 
 /**
- * You never have to use `Binding` objects directly. SerialPort uses them to access the underlying hardware. This documentation is geared towards people who are making bindings for different platforms. This interface is implemented in all bindings.
+ * BindingPort objects are used to access the underlying hardware. This documentation is geared towards people who are making bindings for different platforms. This interface is implemented in all bindings.
  */
 export interface BindingPortInterface {
   readonly openOptions: Required<OpenOptions>
   /**
-   * Required property. `true` if the port is open, `false` otherwise. Should be read-only.
+   * Required property. `true` if the port is open, `false` otherwise. Read only.
    */
   isOpen: boolean
 
   /**
-   * Closes an open connection
+   * Closes an open port
    */
   close(): Promise<void>
 
