@@ -38,7 +38,7 @@
     "esbuild": "0.14.18",
     "esbuild-register": "3.3.2",
     "eslint": "7.32.0",
-    "rollup": "2.67.0",
+    "rollup": "2.70.2",
     "rollup-plugin-node-resolve": "5.2.0",
     "semantic-release": "19.0.2",
     "typescript": "4.5.5"
