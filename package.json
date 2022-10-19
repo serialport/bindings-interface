@@ -6,7 +6,8 @@
   "main": "./dist/index.js",
   "exports": {
     "require": "./dist/index.js",
-    "default": "./dist/index-esm.mjs"
+    "default": "./dist/index-esm.mjs",
+    "types": "./dist/index.d.ts"
   },
   "publishConfig": {
     "access": "public"
