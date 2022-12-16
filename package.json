@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",
     "esbuild": "0.16.7",
-    "esbuild-register": "3.4.1",
+    "esbuild-register": "3.4.2",
     "eslint": "7.32.0",
     "rollup": "2.70.2",
     "rollup-plugin-node-resolve": "5.2.0",
