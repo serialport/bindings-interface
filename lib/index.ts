@@ -11,6 +11,7 @@ export interface PortInfo {
   locationId: string | undefined
   productId: string | undefined
   vendorId: string | undefined
+  friendlyName: string | undefined
 }
 
 export interface OpenOptions {
@@ -56,6 +57,7 @@ export interface PortStatus {
   cts: boolean
   dsr: boolean
   dcd: boolean
+  lowLatency: boolean
 }
 
 /**
