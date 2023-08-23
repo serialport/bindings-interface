@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@microsoft/api-extractor": "7.22.2",
+    "@microsoft/api-extractor": "7.36.4",
     "@types/node": "18.17.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
