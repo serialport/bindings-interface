@@ -140,6 +140,7 @@ export interface BindingInterface<T extends BindingPortInterface = BindingPortIn
   open(options: R): Promise<T>
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type PortInterfaceFromBinding<Binding> = Binding extends BindingInterface<infer T> ? T : never
 export type OpenOptionsFromBinding<Binding> = Binding extends BindingInterface<any, infer T> ? T : never
 export type PortInfoFromBinding<Binding> = Binding extends BindingInterface<any, any, infer T> ? T : never
