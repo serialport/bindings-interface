@@ -6,6 +6,7 @@
 export interface PortInfo {
   path: string
   manufacturer: string | undefined
+  product?: string | undefined
   serialNumber: string | undefined
   pnpId: string | undefined
   locationId: string | undefined
