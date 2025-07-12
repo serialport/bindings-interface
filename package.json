@@ -38,7 +38,7 @@
     "@typescript-eslint/parser": "8.36.0",
     "esbuild": "0.25.6",
     "esbuild-register": "3.6.0",
-    "eslint": "8.57.1",
+    "eslint": "9.31.0",
     "rollup": "3.28.1",
     "semantic-release": "21.1.0",
     "typescript": "5.1.6"
