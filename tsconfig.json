@@ -1,16 +1,25 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "noEmit": true,
-    "allowJs": false,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "declaration": true,
-    "importHelpers": true,
+    "module": "commonjs",
+    "moduleResolution": "nodenext",
+    "outDir":"./dist",
+    "baseUrl": "./",
     "forceConsistentCasingInFileNames": true,
-    "useUnknownInCatchVariables": false
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "esModuleInterop": false,
+    "strictPropertyInitialization": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "importHelpers": false,
+    "useDefineForClassFields": false,
   },
-  "include": [
+   "include": [
     "lib/**/*.ts",
   ],
   "exclude": [
