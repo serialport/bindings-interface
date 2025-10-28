@@ -33,7 +33,7 @@
     "@microsoft/api-extractor": "7.36.4",
     "@rollup/plugin-node-resolve": "15.2.1",
     "@tsconfig/node18": "18.2.1",
-    "@types/node": "22.18.12",
+    "@types/node": "22.18.13",
     "@typescript-eslint/eslint-plugin": "8.46.2",
     "@typescript-eslint/parser": "8.46.2",
     "esbuild": "0.25.11",
