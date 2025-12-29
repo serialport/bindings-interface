@@ -6,7 +6,8 @@
   "main": "./dist/index.js",
   "exports": {
     "require": "./dist/index.js",
-    "default": "./dist/index-esm.mjs"
+    "import": "./mjs/index.mjs",
+    "default": "./mjs/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -19,8 +20,11 @@
   "scripts": {
     "lint": "tsc && eslint lib/**/*.ts",
     "format": "eslint lib/**/*.ts --fix",
-    "clean": "rm -rf dist-ts dist",
-    "build": "npm run clean && tsc -p tsconfig-build.json && rollup -c && node -r esbuild-register bundle-types",
+    "clean": "rm -rf dist-ts dist mjs",
+    "build.mjs": "tsc  --build tsconfig.mjs.json && echo '{\"type\": \"module\"}' > mjs/package.json",
+    "build.cjs": "tsc --build tsconfig.json && echo '{\"type\": \"commonjs\"}' > dist/package.json",
+  
+    "build": "npm run clean && npm run build.cjs && npm run build.mjs",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release"
   },
@@ -30,8 +34,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@microsoft/api-extractor": "7.36.4",
-    "@rollup/plugin-node-resolve": "15.2.1",
     "@tsconfig/node18": "18.2.1",
     "@types/node": "22.19.3",
     "@typescript-eslint/eslint-plugin": "8.50.1",
